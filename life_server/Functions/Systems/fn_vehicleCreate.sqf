@@ -21,6 +21,8 @@ _type = switch (true) do {
     case (_vehicle isKindOf "Ship"): {"Ship"};
 };
 
+if !(isClass (missionConfigFile >> "LifeCfgVehicles" >> _className)) exitWith {}; // No-Inject Batiment hack script
+
 _side = switch (_side) do {
     case west:{"cop"};
     case civilian: {"civ"};
